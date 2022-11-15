@@ -1,0 +1,58 @@
+<hr />
+<h2>
+  Attribute directives Change the appearance or behavior of an element,
+  component, or another directive.
+</h2>
+<h3>
+  Built-in directives use only public APIs. They do not have special access to
+  any private APIs that other directives can't access.
+</h3>
+<hr />
+<div>
+  <h2>NgClass Adds and removes a set of CSS classes.</h2>
+  <p [ngClass]="isSpecial ? 'special' : ''">
+    <b>Add or remove multiple CSS classes simultaneously with ngClass.</b>On the
+    element you'd like to style, add [ngClass] and set it equal to an
+    expression. In this case, isSpecial is a boolean set to true in
+    app.component.ts. Because isSpecial is true, ngClass applies the class of
+    special to the
+  </p>
+  <div>
+    <p [ngClass]="myClasses">
+      <b>Using NgClass with a method</b> To use NgClass with a method, add the
+      method to the component class. In the following example, add() sets the
+      property myclasses with an object that adds or removes three classes based
+      on the true or false state of three other component properties. Each key
+      of the object is a CSS class name. If a key is true, ngClass adds the
+      class. If a key is false, ngClass removes the class.
+    </p>
+    <button (click)="add()">add classes myclasses object</button>
+  </div>
+</div>
+
+<hr />
+
+<div>
+  <h2>NgStyle Adds and removes a set of HTML styles.</h2>
+  <p [ngStyle]="myStyles">
+    Use NgStyle to set multiple inline styles simultaneously, based on the state
+    of the component.To use NgStyle, add a method to the component class. In the
+    following example, setStyles() sets the property myStyles with an object
+    that defines three styles, based on the state of three other component
+    properties.
+  </p>
+  <button (click)="setStyles()">add styles</button>
+</div>
+
+<hr />
+
+<div>
+  <h2>NgModel Adds two-way data binding to an HTML form element.</h2>
+  <p>
+    Use the NgModel directive to display a data property and update that
+    property when the user makes changes.
+  </p>
+  <input [(ngModel)]="myProperty" />
+  <p>{{ myProperty }}</p>
+</div>
+
